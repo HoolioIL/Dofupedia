@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { environment } from '../../../../environments/environment';
@@ -17,7 +17,7 @@ export class DofusService {
 
     const url = `${ this._baseUrl }/classes`;
 
-    return this.http.get<DofusChamp[]>( url )
+    return this.http.get<DofusChamp[]>( url,  )
     .pipe(
       tap( resp => {
         if ( !localStorage.getItem('classes')){

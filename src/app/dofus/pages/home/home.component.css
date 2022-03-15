@@ -1,7 +1,8 @@
 .wrapper {
+    /* display: inline-flex; */
     display: flex;
     align-items: stretch;
-    width: 100%;
+    max-width: 100%;
 }
 
 #sidebar {
@@ -29,6 +30,24 @@
     color: #ffffff;
 }
 
+
+#navigation__bars {
+    display: none;
+}
+
+.boton {
+    border: none;
+    border-radius: 15%;
+    background-color: #ffffff;
+    font-size: 25px;
+    padding: 5px;
+}
+
+
+.components {
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
@@ -36,4 +55,11 @@
     #sidebar.active {
         margin-left: 0;
     }
+
+    #navigation__bars{
+        display:inline-block;
+    }
+
 }
+
+

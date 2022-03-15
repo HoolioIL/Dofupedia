@@ -12,19 +12,17 @@
         <app-sidebar></app-sidebar>
         
     </nav>
-    <div class="col max-vh-100">
-        <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-        
-                    <button type="button" id="sidebarCollapse" class="btn btn-info" (click)="showSidebar()">
-                        <i class="fas fa-align-left"></i>
-                        <span>Toggle Sidebar</span>
-                    </button>
-        
-                </div>
-            </nav>
+    <div class="col" id="navigation__bars">
+        <!-- max-vh-100" -->
+            <button type="button" class="boton" (click)="showSidebar()">
+                <i class="mdi mdi-menu"></i>
+            </button>
         </div>
-        <router-outlet></router-outlet>
-    </div>
+        <div class="d-flex">
+
+        </div>
+        <div class="components mt-3 justify-content-between ">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="d-flex"></div>
 </div>

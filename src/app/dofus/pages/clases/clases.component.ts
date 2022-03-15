@@ -6,6 +6,15 @@ import { DofusChamp } from '../../interfaces/dofus.interface';
   selector: 'app-clases',
   templateUrl: './clases.component.html',
   styles: [
+    `
+      .card {
+        cursor: pointer;
+      }
+
+      .card:hover {
+        background-color: rgb(221,204,255,0.5);
+      }
+    `
    
   ]
 })
