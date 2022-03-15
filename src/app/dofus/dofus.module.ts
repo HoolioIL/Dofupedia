@@ -9,6 +9,7 @@ import { WeaponsComponent } from './pages/weapons/weapons.component';
 import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './pages/home/home.component';
+import { ItemTableComponent } from './components/item-table/item-table.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { HomeComponent } from './pages/home/home.component';
     PetsComponent,
     WeaponsComponent,
     HomeComponent,
+    ItemTableComponent,
   ],
   imports: [
     CommonModule,

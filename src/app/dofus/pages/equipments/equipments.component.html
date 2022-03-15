@@ -1,4 +1,8 @@
-<div class="wrapper d-flex justify-content-center">
-    <p>equipments works!</p>
+<div class="container mt-2">
+    <h2>Equipamiento</h2>
 
+    <app-item-table [items]="equipments"
+    (onPressButton)="showStats( $event )"
+    ></app-item-table>
+    <!-- [stats]="stats" -->
 </div>

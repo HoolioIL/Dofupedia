@@ -29,6 +29,7 @@ export class ClasesComponent implements OnInit {
     if ( localStorage.getItem( 'classes' )){
       this.classes = JSON.parse( localStorage.getItem( 'classes' )! )
       console.log(this.classes);
+      
     }else{
       this.ds.getClasses()
           .subscribe({
