@@ -3,26 +3,33 @@ import { RouterModule, Routes } from '@angular/router';
 import { StartComponent } from './pages/home/start/start.component';
 import { ClasesComponent } from './pages/clases/clases.component';
 import { EquipmentsComponent } from './pages/equipments/equipments.component';
+import { WeaponsComponent } from './pages/weapons/weapons.component';
+import { PetsComponent } from './pages/pets/pets.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: StartComponent,
     children: [
-      {
-        path: 'inicio',
-        component: StartComponent
-      },
       {
         path: 'clases',
         component: ClasesComponent
       },
       {
-        path: 'equipamentos',
+        path: 'equipamientos',
         component: EquipmentsComponent
       },
       {
+        path: 'armas',
+        component: WeaponsComponent
+      },
+      {
+        path: 'mascotas',
+        component: PetsComponent
+      },
+      {
         path: '**',
-        redirectTo: 'inicio'
+        redirectTo: 'clases'
       }
 
     ]
