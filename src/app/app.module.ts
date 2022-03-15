@@ -7,16 +7,19 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { DofusModule } from './dofus/dofus.module';
 import { RouterModule } from '@angular/router';
+import { MainComponent } from './home/main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
+    
     SharedModule,
     DofusModule
   ],

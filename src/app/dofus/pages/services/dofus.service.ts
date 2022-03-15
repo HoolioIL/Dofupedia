@@ -20,7 +20,6 @@ export class DofusService {
     return this.http.get<DofusChamp[]>( url )
     .pipe(
       tap( resp => {
-        console.log( 'hice la petición ')
         if ( !localStorage.getItem('classes')){
           localStorage.setItem('classes', JSON.stringify( resp ))
         }

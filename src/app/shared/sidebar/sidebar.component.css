@@ -3,7 +3,14 @@
     color: white;
 }
 
-.full-screen{
-    min-height: 100vh;
-    height: 100%;
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+    transform: scale(1.1)
+}
+
+.activated {
+    text-decoration:underline;
 }

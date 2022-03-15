@@ -1,0 +1,30 @@
+<div class="wrapper max-vh-100">
+    <!-- Sidebar -->
+    <nav id="sidebar" #refSidebar>
+        <div class="text-center mt-3">
+            <!-- <h2>Menú</h2> -->
+            <a class="menu__title" routerLink="/"><h2>Menú</h2></a>
+            <hr>
+        </div>
+        <!-- <div class="sidebar-header">
+            <h3>Bootstrap Sidebar</h3>
+        </div> -->
+        <app-sidebar></app-sidebar>
+        
+    </nav>
+    <div class="col max-vh-100">
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+        
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" (click)="showSidebar()">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+        
+                </div>
+            </nav>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

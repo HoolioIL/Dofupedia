@@ -7,8 +7,8 @@ import { EquipmentsComponent } from './pages/equipments/equipments.component';
 import { PetsComponent } from './pages/pets/pets.component';
 import { WeaponsComponent } from './pages/weapons/weapons.component';
 import { SidebarComponent } from '../shared/sidebar/sidebar.component';
-import { StartComponent } from './pages/home/start/start.component';
 import { SharedModule } from '../shared/shared.module';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     EquipmentsComponent,
     PetsComponent,
     WeaponsComponent,
-    StartComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,

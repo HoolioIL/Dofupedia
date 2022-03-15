@@ -1,0 +1,39 @@
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    background-image: linear-gradient(10deg, #00738e 0, #007292 5.56%, #007097 11.11%, #006f9a 16.67%, #086d9c 22.22%, #276b9e 27.78%, #39699e 33.33%, #48669d 38.89%, #55649c 44.44%, #616199 50%, #6c5e95 55.56%, #755b91 61.11%, #7e598c 66.67%, #855686 72.22%, #8b5480 77.78%, #915279 83.33%, #955072 88.89%, #984f6b 94.44%, #9a4f64 100%);
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.menu__title {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
