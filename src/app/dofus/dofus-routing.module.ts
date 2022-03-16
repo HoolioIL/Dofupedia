@@ -5,6 +5,7 @@ import { EquipmentsComponent } from './pages/equipments/equipments.component';
 import { WeaponsComponent } from './pages/weapons/weapons.component';
 import { PetsComponent } from './pages/pets/pets.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ClassShowComponent } from './pages/class-show/class-show.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'mascotas',
         component: PetsComponent
+      },
+      {
+        path: 'clase/:id',
+        component: ClassShowComponent
       },
       {
         path: '**',

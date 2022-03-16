@@ -1,3 +1,23 @@
 .color__title {
     color: #6E49D9;
 }
+
+.button__custom {
+    background-color: #6E49D9;
+    color: white;
+    padding: 12px;
+    border: 1px solid;
+    border-color: #6E49D9;
+    border-radius: 5%;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button__custom:hover {
+    background-color: #ffffff;
+    color: #6E49D9;
+    border: 1px solid;
+    border-color: #6E49D9;
+}

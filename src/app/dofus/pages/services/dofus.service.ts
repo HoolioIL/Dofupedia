@@ -31,8 +31,15 @@ export class DofusService {
         }
       })
     );
-
   }
+
+  getClassById( id: number ): Observable<DofusChamp>{
+    const url = `${ this._baseUrl }/classes/${ id }`;
+
+    return this.http.get<DofusChamp>( url );
+  }
+
+
 
 // Chapeau = Sombrero
   getEquipments( type = 'Chapeau', total = 20 ): Observable<Item[]>{

@@ -1,0 +1,77 @@
+<div class="container">
+    <div *ngIf="!loaded">
+        <app-loading></app-loading>
+    </div>
+    <div *ngIf="hasError">
+        <div class="alert alert-danger" role="alert">
+            {{ msgError }}
+          </div>
+        <a routerLink="/dashboard" class="button__custom ms-2">Volver</a>
+    </div>
+
+
+    <div *ngIf="champ" class="mt-2">
+        <h2 class="mb-2">Clase: <strong class="color__title"> {{ champ.name }} </strong></h2>
+        <hr>
+        <div class="row justify-content-center mt-5">
+            <div class="col-auto justify-content-center">
+                <img [src]="champ.maleImg" alt="">
+                <img [src]="champ.femaleImg" alt="">
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <span class="fw-bold fst-italic">Visualización de un {{champ.name}} masculino y femenino </span>
+            </div>
+        </div>  
+
+        <div class="container mt-5">
+            <hr>
+            <!-- Descripción -->
+            <div class="col">
+                <div class="card">
+                    <h5 class="card-header">Descripción</h5>
+                    <div class="card-body">
+                      <p class="card-text">{{champ.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mt-4">
+                <h5>Roles</h5>
+                <ul class="list-group list-group-horizontal mt-3"
+                    *ngFor="let rol of champ.roles">
+                    <li class="list-group-item">{{ rol }}</li>
+                </ul>
+            </div>
+
+            <div class="mt-5 row justify-content-center">
+                <h5 class="mb-3">Hechizos</h5>
+                <div class="col-10">
+
+                    <table class="table table-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Variante</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let spell of champ.spells">
+                                <td> {{ spell.name }}</td>
+                                <td> {{ spell.variant }} </td>
+                            </tr>
+                        </tbody>
+                     </table>
+                    </div>
+                </div>
+            <div class="row justify-content-center">
+                <div class="col-auto mb-5 mt-4">
+                    <a routerLink="/dashboard" class="button__custom">Volver</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+

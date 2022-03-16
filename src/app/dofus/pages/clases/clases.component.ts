@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DofusService } from '../services/dofus.service';
 import { DofusChamp } from '../../interfaces/dofus.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clases',
@@ -10,19 +11,19 @@ import { DofusChamp } from '../../interfaces/dofus.interface';
       .card {
         cursor: pointer;
       }
-
       .card:hover {
         background-color: rgb(221,204,255,0.5);
       }
     `
-   
   ]
 })
 export class ClasesComponent implements OnInit {
 
   classes: DofusChamp[] = [];
 
-  constructor( private ds: DofusService ) { }
+  constructor( 
+              private ds: DofusService,
+              private router: Router ) { }
 
   ngOnInit(): void {
 
@@ -41,8 +42,12 @@ export class ClasesComponent implements OnInit {
             }
           })
     }
+    window.scrollTo(0, 0)
+  }
 
-
+  goToClass( id: number ){
+    this.router.navigate(["dashboard/clase", id ]);
+    
   }
 
 }
