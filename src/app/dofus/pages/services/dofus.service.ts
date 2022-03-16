@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { catchError, Observable, of, tap } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { DofusChamp, Item } from '../../interfaces/dofus.interface';
 
@@ -12,6 +12,12 @@ export class DofusService {
   constructor( private http: HttpClient) { }
 
   private _baseUrl = environment.baseUrl;
+
+  private _pets: Item[] = []; 
+
+  get pets (){
+    return [ ...this._pets ];
+  }
   
   getClasses(): Observable<DofusChamp[]>{
 
@@ -41,7 +47,6 @@ export class DofusService {
     return this.http.get<Item[]>( url, { params } );
 
   }
-  
 
   getWeapons( min = 190, max = 200, total = 20 ): Observable<Item[]>{
 
@@ -50,5 +55,30 @@ export class DofusService {
     return this.http.get<Item[]>( url );
   }
 
+
+  getPets( total = 20 ): Observable<Item[]>  {
+
+    const url = `${ this._baseUrl }/pets`;
+    const params = new HttpParams()
+                      .set('filter[limit]', total );
+    
+    return this.http.get<Item[]>( url , { params })
+          .pipe(
+            tap( resp => {
+              this._pets = resp; 
+            },
+          )
+    );
+  }
+
+  getPetByName( name: string ){
+    const url = `${ this._baseUrl }/pets`;
+    const params = new HttpParams()
+                      .set('filter[where][name][like]', name )
+                      .set('filter[limit]', 10 );
+
+    return this.http.get<Item[]>( url , { params });
+
+  }
 
 }

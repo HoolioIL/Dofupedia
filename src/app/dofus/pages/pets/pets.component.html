@@ -1,1 +1,20 @@
-<p>pets works!</p>
+<div class="container mt-2">
+    <h2 class="color__title">Mascotas</h2>
+    <div *ngIf="!loaded; else showTable">
+        <app-loading></app-loading>
+    </div>
+    <ng-template #showTable>
+        <div *ngIf="!hasError; else errors">
+            <app-search (onEnter)="searchPet( $event )"></app-search>
+            <app-item-table [items]="pets"></app-item-table>
+        </div>
+        <ng-template #errors>
+            <div class="alert alert-warning mt-5" role="alert">
+                ¡Ha ocurrido un error al cargar los datos! Inténtalo en unos minutos
+              </div>
+        </ng-template>
+
+    </ng-template>
+</div>
+
+

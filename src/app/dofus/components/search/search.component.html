@@ -1,0 +1,29 @@
+<div class="row justify-content-center mb-3 mt-3">
+    <div class="col-12 mb-2 col-sm-8 ">
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+            <input type="text" 
+                    class="form-control" 
+                    placeholder="Buscar ..."
+                    [(ngModel)]="text"
+                    (keyup.enter)="search()"
+                    (input)="checkText()"
+                    
+            >
+            <button *ngIf=" text != '' " 
+                    type="button" 
+                    class="btn bg-transparent" 
+                    style="margin-left: -40px; z-index: 100;"
+                    (click)="clear()"
+                    >
+                <i class="mdi mdi-close"></i>
+              </button>
+          </div>
+        
+    </div>
+    <div class="col-auto">
+        <button class="button__search" (click)="search()">Buscar</button>
+    </div>
+</div>
+
+  

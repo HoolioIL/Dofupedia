@@ -13,6 +13,8 @@ export class WeaponsComponent implements OnInit, OnDestroy {
 
   suscription!: Subscription;
   weapons: Item[] = [];
+  loaded: boolean = false;
+  hasError: boolean = false;
 
   constructor( private ds: DofusService ) { }
   
@@ -25,9 +27,12 @@ export class WeaponsComponent implements OnInit, OnDestroy {
     this.suscription = this.ds.getWeapons().subscribe({
       next: ( weapons ) => {
         this.weapons = weapons;
+        this.loaded = true;
       },
       error: ( err ) => {
         this.weapons = []
+        this.loaded = true;
+        this.hasError = true;
       }
     })
   }

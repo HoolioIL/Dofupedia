@@ -19,9 +19,9 @@
                 <td> {{ item.level }} </td>
                 <td [class]=" item.conditions ? 'text-danger' : ''"> {{ item.conditions ? item.conditions : 'Sin condiciones' }} </td>
                 <td class="text-center"> 
-                    <button class="btn btn-primary" (click)="pressButton( item._id )" 
+                    <button class="button__custom" (click)="pressButton( item._id )" 
                             data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Ver características 
+                        Características 
                     </button>
                 </td>
             </tr>

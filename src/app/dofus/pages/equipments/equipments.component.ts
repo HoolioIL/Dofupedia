@@ -14,6 +14,8 @@ export class EquipmentsComponent implements OnInit, OnDestroy {
   equipments: Item[] = [];
   stats: { [key: string]: Statistic }[] = [];
   suscription!: Subscription;
+  loaded: boolean = false;
+  hasError: boolean = false;
 
   constructor( private ds: DofusService) { }
 
@@ -26,10 +28,13 @@ export class EquipmentsComponent implements OnInit, OnDestroy {
     this.suscription = this.ds.getEquipments().subscribe({
       next: ( equipments ) => {
         this.equipments = equipments;
-        console.log(this.equipments);
+        this.loaded = true;
       },
-      error: ( err )=> {
+      error: ()=> {
         this.equipments = [];
+        this.hasError = true;
+        this.loaded = true;
+        
       }        
     })
   }

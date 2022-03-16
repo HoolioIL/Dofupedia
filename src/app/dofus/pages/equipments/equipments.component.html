@@ -1,8 +1,20 @@
 <div class="container mt-2">
-    <h2>Equipamiento</h2>
+    <h2 class="color__title">Equipamientos</h2>
+    <div *ngIf="!loaded; else showTable">
+        <app-loading></app-loading>
+    </div>
+    <ng-template #showTable>
+        <div *ngIf="!hasError; else errors">
+            <app-item-table [items]="equipments"
+            (onPressButton)="showStats( $event )"
+            ></app-item-table>
+        </div>
 
-    <app-item-table [items]="equipments"
-    (onPressButton)="showStats( $event )"
-    ></app-item-table>
-    <!-- [stats]="stats" -->
+        <ng-template #errors>
+            <div class="alert alert-warning mt-5" role="alert">
+                ¡Ha ocurrido un error al cargar los datos! Inténtalo en unos minutos
+              </div>
+        </ng-template>
+
+    </ng-template>
 </div>
