@@ -14,3 +14,13 @@
 .activated {
     text-decoration:underline;
 }
+
+.interactive {
+    position: fixed;
+    bottom: 0;
+}
+
+.github__size {
+    font-size: 50px;
+    color: white;
+}

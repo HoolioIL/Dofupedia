@@ -48,6 +48,11 @@
     width: 100%;
 }
 
+
+.github__size{
+    font-size: 50px;
+}
+
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;

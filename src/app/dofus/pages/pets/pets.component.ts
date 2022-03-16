@@ -22,13 +22,11 @@ export class PetsComponent implements OnInit {
       next: ( pets ) => {
         this.pets = pets;
         this.loaded = true;
-        console.log('Leeré el getter', this.getPets);
         
       },
       error: ( err ) => {
         this.hasError = true;
         this.loaded = true;
-        console.log( err );
       }
     })
   }
